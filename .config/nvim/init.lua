@@ -267,6 +267,16 @@ local plugins = {
 			vim.g.vimtex_compiler_method = "latexmk"
 		end,
 	},
+	{
+		"keaising/im-select.nvim",
+		config = function()
+			require("im_select").setup({
+				-- Theses settings are only for Windows/WSL
+				default_im_select = 1033, -- English US Keyboard
+				default_command = "im-select.exe",
+			})
+		end,
+	},
 }
 local opts = {}
 
