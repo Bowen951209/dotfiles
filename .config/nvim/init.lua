@@ -277,6 +277,7 @@ local plugins = {
 			})
 		end,
 	},
+	{ "archibate/lualine-time" },
 }
 local opts = {}
 
@@ -314,6 +315,18 @@ vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 vim.opt.showmode = false
 require("lualine").setup({
 	options = { theme = "codedark" },
+	sections = {
+		lualine_x = {
+			"cdate",
+			{
+				"ctime",
+				format = "%H:%M",
+				fmt = function(str)
+					return str .. "  "
+				end,
+			},
+		},
+	},
 })
 
 vim.opt.termguicolors = true
