@@ -282,6 +282,21 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+
+require('telescope').setup({
+  pickers = {
+    find_files = {
+      find_command = {
+        'rg',
+        '--files',
+        '--hidden',
+        '--glob',
+        '!**/.git/*',
+      },
+    },
+  },
+})
+
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
