@@ -5,18 +5,27 @@ require("config.lazy")
 
 -- The rest of your original init.lua runtime configurations are preserved here.
 -- These are executed after lazy.nvim and plugins are registered (same execution order as original).
-require('telescope').setup({
-  pickers = {
-    find_files = {
-      find_command = {
-        'rg',
-        '--files',
-        '--hidden',
-        '--glob',
-        '!**/.git/*',
-      },
-    },
-  },
+require("telescope").setup({
+	pickers = {
+		find_files = {
+			find_command = {
+				"rg",
+				"--files",
+				"--hidden",
+				"--glob",
+				"!**/.git/*",
+			},
+		},
+		live_grep = {
+			additional_args = function()
+				return {
+					"--hidden", -- include hidden files
+					"--glob",
+					"!**/.git/*", -- exclude .git
+				}
+			end,
+		},
+	},
 })
 
 local builtin = require("telescope.builtin")
@@ -275,3 +284,4 @@ vim.o.shell = "powershell.exe"
 vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
+
