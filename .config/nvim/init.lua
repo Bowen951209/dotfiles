@@ -276,9 +276,3 @@ vim.keymap.set(
 	":RustLsp! debuggables<CR>",
 	{ noremap = true, silent = true, desc = "Rust debuggables" }
 )
-
--- Set default shell to PowerShell
-vim.o.shell = "powershell.exe"
-vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
-vim.o.shellquote = ""
-vim.o.shellxquote = ""

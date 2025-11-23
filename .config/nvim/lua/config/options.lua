@@ -11,10 +11,10 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 
--- Only set PowerShell as shell on Windows to preserve original behavior
+-- Set PowerShell as shell on Windows
 if vim.fn.has("win32") == 1 then
-    vim.o.shell = "powershell.exe"
-    vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
-    vim.o.shellquote = ""
-    vim.o.shellxquote = ""
+	vim.o.shell = "powershell.exe"
+	vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+	vim.o.shellquote = ""
+	vim.o.shellxquote = ""
 end
