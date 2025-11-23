@@ -196,8 +196,6 @@ require("neogit").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>gs", "<cmd>Neogit<CR>")
-
 -- Copy to system clipboard (visual mode)
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", '"+yg_', { desc = "Yank line to system clipboard" })
@@ -284,4 +282,3 @@ vim.o.shell = "powershell.exe"
 vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
-
