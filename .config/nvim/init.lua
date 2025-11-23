@@ -46,14 +46,6 @@ require("nvim-treesitter").setup({
 
 require("nvim-treesitter").install({ "rust", "javascript", "lua" })
 
--- highlighting
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "rust", "javascript", "lua" },
-	callback = function()
-		vim.treesitter.start()
-	end,
-})
-
 -- folding and indenting
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
@@ -123,14 +115,6 @@ require("conform").setup({
 		rust = { "rustfmt" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 	},
-})
-
--- format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
 })
 
 vim.diagnostic.config({
