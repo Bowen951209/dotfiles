@@ -29,3 +29,9 @@ vim.keymap.set("n", "<C-c><C-c>", close_terminal, { noremap = true, silent = tru
 vim.keymap.set("n", "<leader>ih", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle Inlay Hints" })
+
+-- Gotos
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "gr", function()
+  require('telescope.builtin').lsp_references()
+end, { desc = "Go to References with Telescope", nowait = true })
