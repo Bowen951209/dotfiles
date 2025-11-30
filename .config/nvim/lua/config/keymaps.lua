@@ -11,27 +11,45 @@ vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste from system clipboard" }
 vim.keymap.set("n", "<leader>P", '"+P', { desc = "Paste before from system clipboard" })
 
 -- Terminal mappings and helpers
-vim.keymap.set("n", "<Leader>th", ":split | terminal<CR>", { noremap = true, silent = true, desc = "Open horizontal terminal" })
-vim.keymap.set("n", "<Leader>tv", ":vsplit | terminal<CR>", { noremap = true, silent = true, desc = "Open vertical terminal" })
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Switch to normal mode from terminal mode" })
+vim.keymap.set(
+	"n",
+	"<Leader>th",
+	":split | terminal<CR>",
+	{ noremap = true, silent = true, desc = "Open horizontal terminal" }
+)
+vim.keymap.set(
+	"n",
+	"<Leader>tv",
+	":vsplit | terminal<CR>",
+	{ noremap = true, silent = true, desc = "Open vertical terminal" }
+)
+vim.keymap.set(
+	"t",
+	"<Esc><Esc>",
+	"<C-\\><C-n>",
+	{ noremap = true, silent = true, desc = "Switch to normal mode from terminal mode" }
+)
 
 local function close_terminal()
-    local buftype = vim.bo.buftype
-    if buftype == "terminal" then
-        vim.cmd("stopinsert") -- exit terminal mode
-        vim.cmd("bd!") -- delete buffer
-    end
+	local buftype = vim.bo.buftype
+	if buftype == "terminal" then
+		vim.cmd("stopinsert") -- exit terminal mode
+		vim.cmd("bd!") -- delete buffer
+	end
 end
 vim.keymap.set("t", "<C-c><C-c>", close_terminal, { noremap = true, silent = true, desc = "Close terminal" })
 vim.keymap.set("n", "<C-c><C-c>", close_terminal, { noremap = true, silent = true, desc = "Close terminal" })
 
 -- Inlay Hint toggle
 vim.keymap.set("n", "<leader>ih", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle Inlay Hints" })
 
 -- Gotos
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 vim.keymap.set("n", "gr", function()
-  require('telescope.builtin').lsp_references()
+	require("telescope.builtin").lsp_references()
 end, { desc = "Go to References with Telescope", nowait = true })
+
+-- Neogit
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
