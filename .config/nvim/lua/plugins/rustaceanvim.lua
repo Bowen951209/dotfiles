@@ -5,7 +5,7 @@ return {
 	ft = { "rust" },
 	keys = {
 		{
-			"<leader>r",
+			"<leader>rn",
 			":RustLsp! runnables<CR>",
 			desc = "Rust runnables",
 			ft = "rust",
