@@ -1,4 +1,4 @@
-﻿local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -14,7 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Load the plugins table and opts from lua/plugins/init.lua
-local plugins, opts = require("plugins")
--- Call lazy.setup with the same arguments as original init.lua to preserve behavior
-require("lazy").setup(plugins, opts or {})
+-- Load plugins from lua/plugins/ folder using lazy.nvim's import feature
+-- Each .lua file in plugins/ is automatically loaded as a plugin spec
+require("lazy").setup({ import = "plugins" }, {})
