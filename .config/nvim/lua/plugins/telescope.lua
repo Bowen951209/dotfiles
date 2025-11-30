@@ -24,7 +24,14 @@ return {
 					end,
 				},
 			},
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown({}),
+				},
+			},
 		})
+
+		require("telescope").load_extension("ui-select")
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -35,5 +42,6 @@ return {
 		vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Find word under cursor" })
 		vim.keymap.set("n", "<leader>fc", builtin.command_history, { desc = "Command history" })
 		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix list" })
+		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope Diagnostics" })
 	end,
 }

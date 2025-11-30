@@ -56,3 +56,6 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" }
 
 -- Lsp Rename
 vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, { desc = "Rename" })
+
+-- Lsp Code Action
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
