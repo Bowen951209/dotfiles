@@ -2,39 +2,6 @@
 
 This is a modular Neovim configuration using [lazy.nvim](https://github.com/folke/lazy.nvim) as the plugin manager.
 
-## Directory Structure
-
-```
-.config/nvim/
-├── init.lua                 # Entry point - loads config modules and sets diagnostics
-└── lua/
-    ├── config/              # Core configuration modules
-    │   ├── options.lua      # Editor options (tabs, numbers, leader key, etc.)
-    │   ├── keymaps.lua      # Global keymaps (window movement, clipboard, terminal)
-    │   ├── autocmds.lua     # Autocommands (format on save, relative number toggle)
-    │   └── lazy.lua         # lazy.nvim bootstrap and setup
-    └── plugins/             # Plugin specifications (one file per plugin/group)
-        ├── init.lua         # Empty table (required by lazy.nvim import)
-        ├── telescope.lua    # Fuzzy finder
-        ├── treesitter.lua   # Syntax highlighting
-        ├── lualine.lua      # Status line
-        ├── bufferline.lua   # Buffer tabs
-        ├── aerial.lua       # Code outline
-        ├── mason.lua        # LSP installer + mason-lspconfig
-        ├── conform.lua      # Code formatter
-        ├── cmp.lua          # Autocompletion
-        ├── copilot.lua      # GitHub Copilot
-        ├── dap.lua          # Debug adapter protocol
-        ├── neogit.lua       # Git integration
-        ├── kanagawa.lua     # Colorscheme
-        ├── lsp-endhints.lua # LSP end hints
-        ├── trouble.lua      # Diagnostics list
-        ├── which-key.lua    # Keybinding hints
-        ├── rustaceanvim.lua # Rust development
-        ├── comment.lua      # Code commenting
-        └── misc.lua         # Other plugins (fidget, gitsigns, surround, etc.)
-```
-
 ## How It Works
 
 1. **`init.lua`** is the entry point that loads:
@@ -125,19 +92,6 @@ vim.api.nvim_create_autocmd("EventName", {
 1. Find the plugin file in `lua/plugins/`
 2. Edit the configuration in the `config` function or `opts` table
 3. Restart Neovim or run `:Lazy reload plugin-name`
-
-## Key Files Reference
-
-| File | Purpose |
-|------|---------|
-| `config/options.lua` | Leader key, tabs, line numbers, terminal shell |
-| `config/keymaps.lua` | Window navigation, clipboard, terminal, LSP gotos |
-| `config/autocmds.lua` | Format on save, relative number toggle, Neogit navigation |
-| `plugins/telescope.lua` | `<leader>f*` keymaps for fuzzy finding |
-| `plugins/trouble.lua` | `<leader>x*` keymaps for diagnostics |
-| `plugins/aerial.lua` | `<leader>a` for code outline, `{`/`}` for navigation |
-| `plugins/dap.lua` | `<leader>b` for breakpoints |
-| `plugins/rustaceanvim.lua` | `<leader>r` for runnables, `<leader>d` for debuggables |
 
 ## Commands
 
