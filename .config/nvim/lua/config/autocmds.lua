@@ -1,4 +1,4 @@
-﻿-- Toggle relative number on InsertEnter/InsertLeave (same behavior as original)
+-- Toggle relative number on InsertEnter/InsertLeave (same behavior as original)
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
 		vim.opt.relativenumber = false

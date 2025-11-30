@@ -1,4 +1,4 @@
-﻿-- General editor options and leader key
+-- General editor options and leader key
 vim.g.mapleader = " "
 
 vim.cmd("set expandtab")
