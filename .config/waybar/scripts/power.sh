@@ -2,7 +2,7 @@
 
 # Present options with wofi dmenu style
 chosen=$(printf " Lock\n Logout\n Reboot\n Poweroff" \
-    | wofi --dmenu --prompt "Power Menu" --hide-scroll --width 200 --insensitive)
+    | wofi --dmenu --prompt "Power Menu" --hide-scroll --width 200 --height 100 --insensitive)
 
 case "$chosen" in
     " Lock")
