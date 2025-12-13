@@ -1,0 +1,43 @@
+/* Wofi Dark Grey Theme */
+
+/* Main background */
+* {
+    background-color: #1e1e1e;
+    color: #d0d0d0;
+    font-size: 14px;
+    font-family: "Hack Nerd Font Mono", monospace;
+}
+
+/* Selected item */
+*:selected {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+/* Window borders */
+window {
+    border: 1px solid #2e2e2e;
+    border-radius: 6px;
+}
+
+/* Input field */
+input {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #3a3a3a;
+    padding: 6px 10px;
+}
+
+/* Scrollbar (optional, subtle) */
+scrollbar {
+    background-color: #1e1e1e;
+    border-radius: 4px;
+}
+
+/* Categories / headers */
+header {
+    color: #b0b0b0;
+    font-weight: 500;
+    font-size: 13px;
+}
+
