@@ -1,62 +1,59 @@
 /* Defined static dark theme colors */
 @define-color background #1A1A1A;
 @define-color foreground #D0D0D0;
-@define-color color7 #A9A9A9; /* A medium gray for general text */
-@define-color color9 #FFFFFF; /* White for emphasis/active */
-@define-color blue #5F87AF; /* Example color for active workspaces */
+@define-color color7 #A9A9A9;
+@define-color color9 #FFFFFF;
+@define-color blue #5F87AF;
 
 * {
-    font-size:12px;
+    font-size: 12px;
     font-family: "CodeNewRoman Nerd Font Propo";
 }
-window#waybar{
-    all:unset;
-    background: transparent; 
+
+window#waybar {
+    all: unset;
+    background: @background;
+    color: @foreground;
 }
-/* Reduce overall vertical space by adjusting margin and padding */
-.modules-left {
-    /* Reduced top margin (10 -> 5) and bottom margin (5 -> 2) */
-    padding:4px; 
-    margin:5 0 2 10; 
-    border-radius:10px;
-    background: alpha(@background,.6); 
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
-.modules-center {
-    /* Reduced top margin (10 -> 5) and bottom margin (5 -> 2) */
-    padding:4px; 
-    margin:5 0 2 0; 
-    border-radius:10px;
-    background: alpha(@background,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
+
+.modules-left,
+.modules-center,
 .modules-right {
-    /* Reduced top margin (10 -> 5) and bottom margin (5 -> 2) */
-    padding:4px; 
-    margin: 5 10 2 0; 
-    border-radius:10px;
-    background: alpha(@background,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    padding: 0px 6px;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
 }
+
+/* Tooltip */
 tooltip {
-    background:@background;
+    background: @background;
     color: @color7;
 }
 
-#clock:hover, #bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+/* Hover effects */
+#clock:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover {
     transition: all .3s ease;
-    color:@color9;
+    color: @color9;
 }
 
-#clock{
-    /* Keep horizontal padding */
-    padding: 0px 5px;
-    color:@color7;
+/* Clock */
+#clock {
+    padding: 0px 6px;
+    color: @color7;
     transition: all .3s ease;
 }
+
+/* Tray */
 #tray {
-    padding: 0px 5px;
-    padding-right: 10px;
+    padding: 0px 6px;
     transition: all .3s ease;
     color: @color7;
 }
@@ -64,112 +61,98 @@ tooltip {
     color: @color9;
 }
 
+/* Workspaces */
 #workspaces {
-    padding: 0px 5px;
+    padding: 0px 6px;
 }
 #workspaces button {
-    all:unset;
-    padding: 0px 5px;
-    color: alpha(@color9,.4); 
+    all: unset;
+    padding: 0px 6px;
+    color: alpha(@color9, .4);
     transition: all .2s ease;
 }
 #workspaces button:hover {
-    color:rgba(0,0,0,0);
-    border: none;
+    color: rgba(0,0,0,0);
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all .2s ease;
 }
 
-/* FIX for Sway Focused Workspace */
+/* Focused workspace */
 #workspaces button.focused {
-    color: @color9; 
-    border: none;
+    color: @color9;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 
+/* Empty workspace */
 #workspaces button.empty {
     color: rgba(0,0,0,0);
-    border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 #workspaces button.empty:hover {
-    color: rgba(0,0,0,0);
-    border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 0.2s ease;
 }
-
 #workspaces button.empty.focused {
-    color: @color9; 
-    border: none;
+    color: @color9;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 
-#bluetooth{
-    padding: 0px 0px;
-    padding-right: 10px;
+/* System modules */
+#bluetooth,
+#network {
+    padding: 0px 6px;
     transition: all .3s ease;
-    color:@color7;
+    color: @color7;
 }
-#network{
-    padding: 0px 0px;
-    padding-right: 10px;
+
+#battery {
+    padding: 0px 6px;
     transition: all .3s ease;
-    color:@color7;
-}
-#battery{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
+    color: @color7;
 }
 #battery.charging {
     color: #26A65B;
 }
-
 #battery.warning:not(.charging) {
     color: #ffbe61;
 }
-
 #battery.critical:not(.charging) {
     color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-#group-expand{
-    padding: 0px 5px;
-    transition: all .3s ease; 
-}
-#custom-expand{
-    padding: 0px 5px;
-    color:alpha(@foreground,.2);
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
-    transition: all .3s ease; 
-}
-#custom-expand:hover{
-    color:rgba(255,255,255,.2);
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+    animation: blink 0.5s linear infinite alternate;
 }
 
-#cpu,#memory,#temperature{
-    padding: 0px 5px;
-    transition: all .3s ease; 
-    color:@color7;
-
-}
-#custom-endpoint{
-    color:transparent;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
-
-}
-#custom-powermenu {
-    padding: 0px 5px;
+/* CPU / Memory / Temp */
+#cpu,
+#memory,
+#temperature {
+    padding: 0px 6px;
     transition: all .3s ease;
     color: @color7;
+}
+
+/* Custom modules */
+#group-expand,
+#custom-expand,
+#custom-powermenu {
+    padding: 0px 6px;
+    transition: all .3s ease;
+    color: @color7;
+}
+
+#custom-expand {
+    color: alpha(@foreground, .2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+}
+
+#custom-expand:hover {
+    color: rgba(255,255,255,.2);
+    text-shadow: 0px 0px 2px rgba(255,255,255,.5);
 }
 
 #custom-powermenu:hover {
     color: @color9;
 }
+
+#custom-endpoint {
+    color: transparent;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+}
+
