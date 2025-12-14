@@ -21,6 +21,8 @@
     },
     "sway/window": {
         "format": "{title}", 
+        "icon": true,
+        "icon-size": 18,
         "max-length": 50 
     },
     "clock": {
