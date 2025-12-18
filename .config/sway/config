@@ -18,6 +18,28 @@ set $term foot
 # Your preferred application launcher
 set $menu wofi --show drun -i
 
+# OSD server https://github.com/ErikReider/SwayOSD
+exec swayosd-server
+
+# Sink volume raise optionally with --device
+bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
+# Sink volume lower optionally with --device
+bindsym XF86AudioLowerVolume exec  swayosd-client --output-volume lower
+# Sink volume toggle mute
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+# Source volume toggle mute
+bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+
+# Brightness raise (optionally with --device, can be device name or wildcard)
+bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise --device intel_backlight
+# Brightness lower (optionally with --device, can be device name or wildcard)
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower --device intel_backlight
+
+# Play/Pause current player
+bindsym XF86AudioPlay exec swayosd-client --playerctl play-pause
+# Next song for current player
+bindsym XF86AudioNext exec swayosd-client --playerctl next
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
