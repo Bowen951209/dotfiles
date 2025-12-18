@@ -6,7 +6,7 @@ chosen=$(printf " Lock\n Logout\n Reboot\n Poweroff" \
 
 case "$chosen" in
     " Lock")
-        swaylock
+        loginctl lock-session
         ;;
     " Logout")
         swaymsg exit
