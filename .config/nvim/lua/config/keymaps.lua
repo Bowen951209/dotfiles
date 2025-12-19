@@ -59,3 +59,6 @@ vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, { desc = "Rename" })
 
 -- Lsp Code Action
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+
+-- cd (nnn)
+vim.keymap.set("n", "<leader>cd", "<cmd>NnnPicker<cr>", { desc = "Change directoy with nnn" })

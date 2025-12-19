@@ -79,6 +79,17 @@ return {
 				desc = "Search GitHub",
 			},
 		},
+		{
+			"luukvbaal/nnn.nvim",
+			config = function()
+				require("nnn").setup({
+					explorer = {
+						cmd = "n",
+					},
+					quitcd = "cd",
+				})
+			end,
+		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
