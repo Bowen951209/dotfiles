@@ -239,6 +239,9 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim -g "$(slurp)" - | wl-copy
     bindsym Shift+Print exec grim -g "$(slurp)" - | tee ~/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+
+    # Power menu (wofi)
+    bindsym $mod+Escape exec ~/.config/waybar/scripts/power.sh
 #
 # Status Bar:
 #
