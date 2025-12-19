@@ -30,17 +30,17 @@ return {
 	{
 		"keaising/im-select.nvim",
 		config = function()
-            if vim.fn.has("win32") == 1 then
-			    require("im_select").setup({
-			    	default_im_select = 1033,
-			    	default_command = "im-select.exe",
-			    })
-            else
-			    require("im_select").setup({
-                    default_im_select  = "keyboard-us",
-			    	default_command = "fcitx5-remote",
-			    })
-            end
+			if vim.fn.has("win32") == 1 then
+				require("im_select").setup({
+					default_im_select = 1033,
+					default_command = "im-select.exe",
+				})
+			else
+				require("im_select").setup({
+					default_im_select = "keyboard-us",
+					default_command = "fcitx5-remote",
+				})
+			end
 		end,
 	},
 	{
