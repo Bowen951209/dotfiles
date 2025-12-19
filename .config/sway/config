@@ -75,7 +75,7 @@ exec swayidle \
   unlock 'rm -f /tmp/skip_suspend'
 exec swayidle -w \
   timeout 300 'loginctl lock-session' \
-  timeout 300 '[ -f /tmp/skip_suspend ] || systemctl suspend' \
+  timeout 600 '[ -f /tmp/skip_suspend ] || systemctl suspend' \
   before-sleep 'loginctl lock-session'
 
 ### Input configuration
