@@ -19,7 +19,8 @@ set $term foot
 set $menu wofi --show drun -i
 
 # OSD server https://github.com/ErikReider/SwayOSD
-exec swayosd-server
+# set the environment variable because of a Nvidia issue https://github.com/ErikReider/SwayOSD/issues/131
+exec GSK_RENDERER=gl swayosd-server
 
 # Sink volume raise optionally with --device
 bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
