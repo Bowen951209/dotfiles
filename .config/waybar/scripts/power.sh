@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Present options with wofi dmenu style
-chosen=$(printf " Lock\n Logout\n Reboot\n Poweroff" \
-    | wofi --dmenu --prompt "Power Menu" --hide-scroll --width 200 --height 100 --insensitive)
+chosen=$(printf " Lock\n Logout\n Reboot\n Poweroff\n󰒲 Suspend\n󰒱 Skip Suspend" \
+    | wofi --dmenu --prompt "Power Menu" --hide-scroll --width 200 --height 150 --insensitive)
 
 case "$chosen" in
     " Lock")
@@ -16,5 +16,11 @@ case "$chosen" in
         ;;
     " Poweroff")
         systemctl poweroff
+        ;;
+    "󰒲 Suspend")
+        systemctl suspend
+        ;;
+    "󰒱 Skip Suspend")
+        ~/.local/bin/touch_skip_suspend.sh
         ;;
 esac
