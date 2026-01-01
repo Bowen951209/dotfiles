@@ -82,10 +82,9 @@ return {
 		{
 			"luukvbaal/nnn.nvim",
 			config = function()
+				vim.env.NNN_TMPFILE = (vim.env.XDG_CONFIG_HOME or (vim.env.HOME .. "/.config")) .. "/nnn/.lastd"
+
 				require("nnn").setup({
-					explorer = {
-						cmd = "n",
-					},
 					quitcd = "cd",
 				})
 			end,
