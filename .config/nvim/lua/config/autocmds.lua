@@ -72,6 +72,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		})
 	end,
 })
-
--- Disable inlay hint by default
-vim.lsp.inlay_hint.enable(false)

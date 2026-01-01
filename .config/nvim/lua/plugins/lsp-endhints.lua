@@ -18,7 +18,7 @@ return {
 			extmark = {
 				priority = 50,
 			},
-			autoEnableHints = true,
+			autoEnableHints = false,
 		})
 	end,
 }
