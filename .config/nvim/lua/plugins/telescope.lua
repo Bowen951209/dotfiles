@@ -30,11 +30,6 @@ return {
 					end,
 				},
 			},
-			extensions = {
-				["ui-select"] = {
-					require("telescope.themes").get_dropdown({}),
-				},
-			},
 			aerial = {
 				-- Set the width of the first two columns (the second
 				-- is relevant only when show_columns is set to 'both')
@@ -52,8 +47,6 @@ return {
 				show_columns = "both",
 			},
 		})
-
-		require("telescope").load_extension("ui-select")
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
