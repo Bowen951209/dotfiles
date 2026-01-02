@@ -4,6 +4,12 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		require("telescope").setup({
+			defaults = {
+				layout_config = {
+					prompt_position = "top",
+				},
+				sorting_strategy = "ascending",
+			},
 			pickers = {
 				find_files = {
 					find_command = {
