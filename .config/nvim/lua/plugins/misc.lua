@@ -43,16 +43,6 @@ return {
 			end
 		end,
 	},
-	{
-		"luukvbaal/nnn.nvim",
-		config = function()
-			vim.env.NNN_TMPFILE = (vim.env.XDG_CONFIG_HOME or (vim.env.HOME .. "/.config")) .. "/nnn/.lastd"
-
-			require("nnn").setup({
-				quitcd = "cd",
-			})
-		end,
-	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
