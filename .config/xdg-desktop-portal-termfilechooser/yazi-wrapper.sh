@@ -45,7 +45,7 @@ quote_string() {
   echo "'${input//\'/\'\\\'\'}'"
 }
 
-termcmd="${TERMCMD:-/usr/bin/foot -T $(quote_string "$TITLE")}"
+termcmd="${TERMCMD:-/usr/bin/foot --app-id=xdg-portal-filechooser -T $(quote_string "$TITLE")}"
 
 cleanup() {
   if [ -f "$tmpfile" ]; then
