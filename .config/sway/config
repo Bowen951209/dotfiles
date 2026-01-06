@@ -61,6 +61,7 @@ default_floating_border pixel 2
 
 for_window [title="nmtui"] floating enable, move position center
 for_window [title="bluetui"] floating enable, move position center
+for_window [title="nvtop"] floating enable, move position center
 for_window [app_id="xdg-portal-filechooser"] floating enable, move position center, resize set width 85 ppt height 80 ppt
 
 ### Idle configuration
