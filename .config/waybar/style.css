@@ -131,7 +131,8 @@ tooltip {
 /* Custom modules */
 #group-expand,
 #custom-expand,
-#custom-powermenu {
+#custom-powermenu,
+#custom-gpu-usage{
     padding: 0px 6px;
     transition: all .3s ease;
     color: @color7;
@@ -148,6 +149,10 @@ tooltip {
 }
 
 #custom-powermenu:hover {
+    color: @color9;
+}
+
+#custom-gpu-usage:hover {
     color: @color9;
 }
 

@@ -91,7 +91,7 @@
             "transition-to-left": true,
             "click-to-reveal": true
         },
-        "modules": ["custom/expand", "cpu", "memory", "temperature", "custom/endpoint"]
+        "modules": ["custom/expand", "cpu", "memory", "temperature", "custom/gpu-usage", "custom/endpoint"]
     },
     "cpu": {
         "format": "CPU {usage}%",
@@ -120,4 +120,10 @@
         "on-click": "~/.config/waybar/scripts/power.sh",
         "interval": 3600
     },
+    "custom/gpu-usage": {
+        "format": "GPU {}",
+        "exec": "~/projects/gpu-usage-waybar/target/release/gpu-usage-waybar",
+        "return-type": "json",
+        "on-click": "footclient -T nvtop nvtop",
+    }
 }
