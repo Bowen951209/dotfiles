@@ -6,17 +6,17 @@ interval = 1000
 [text]
 format = "{gpu_utilization}%   VRAM {mem_used}M"
 
-[tooltip]
-format = """GPU: {gpu_utilization}%
-MEM USED: {mem_used}/{mem_total} MiB ({mem_utilization}%)
-MEM R/W: {mem_rw}%
-DEC: {decoder_utilization}%
-ENC: {encoder_utilization}%
-TEMP: {temperature}°C
-POWER: {power}W
-PSTATE: {p_state}
-PLEVEL: {p_level}
-FAN SPEED: {fan_speed}%
-TX: {tx} MiB/s
-RX: {rx} MiB/s"""
-
+# [tooltip]
+# format = """GPU: {gpu_utilization}%
+# MEM USED: {mem_used}/{mem_total} MiB ({mem_utilization}%)
+# MEM R/W: {mem_rw}%
+# DEC: {decoder_utilization}%
+# ENC: {encoder_utilization}%
+# TEMP: {temperature}°C
+# POWER: {power}W
+# PSTATE: {p_state}
+# PLEVEL: {p_level}
+# FAN SPEED: {fan_speed}%
+# TX: {tx} MiB/s
+# RX: {rx} MiB/s"""
+#
