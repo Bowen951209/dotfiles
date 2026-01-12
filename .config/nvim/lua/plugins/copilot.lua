@@ -1,27 +1,17 @@
 return {
 	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
+		"CopilotC-Nvim/CopilotChat.nvim",
 		dependencies = {
-			{
-				"copilotlsp-nvim/copilot-lsp",
-				config = function()
-					vim.g.copilot_nes_debounce = 500
-				end,
-			},
+			{ "nvim-lua/plenary.nvim", branch = "master" },
 		},
-		config = function()
-			require("copilot").setup({})
-		end,
+		build = "make tiktoken",
 		opts = {
-			suggestion = { enabled = false },
-			panel = { enabled = false },
-			nes = { enabled = true },
-			filetypes = {
-				rust = true,
-				lua = true,
-				["*"] = false,
+			prompts = {
+				RewriteEnglish = {
+					prompt = "Improve the English grammar and clarity of the selected text.",
+					mapping = "<leader>ce",
+					description = "Rewrite selected text to clear, correct English",
+				},
 			},
 		},
 	},
