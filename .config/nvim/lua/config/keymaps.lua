@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste from system clipboard" }
 vim.keymap.set("n", "<leader>P", '"+P', { desc = "Paste before from system clipboard" })
 
 -- Terminal mappings and helpers
+vim.keymap.set("n", "<Leader>tt", ":terminal<CR>", { noremap = true, silent = true, desc = "Open terminal" })
 vim.keymap.set(
 	"n",
 	"<Leader>th",
