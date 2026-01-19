@@ -4,6 +4,12 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Move to top window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Move to right window" })
 
+-- Resize windows with Ctrl + Arrow keys
+vim.keymap.set("n", "<M-h>", "<cmd>vertical resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<M-l>", "<cmd>vertical resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<M-j>", "<cmd>resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<M-k>", "<cmd>resize -2<CR>", { silent = true })
+
 -- System Clipboard
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", '"+yg_', { desc = "Yank line to system clipboard" })
