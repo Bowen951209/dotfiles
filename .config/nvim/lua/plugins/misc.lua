@@ -1,7 +1,6 @@
 -- Miscellaneous plugins that don't need complex configuration
 return {
 	{ "j-hui/fidget.nvim", opts = {} },
-	{ "lewis6991/gitsigns.nvim" },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
