@@ -45,7 +45,7 @@ quote_string() {
   echo "'${input//\'/\'\\\'\'}'"
 }
 
-termcmd="${TERMCMD:-/usr/bin/footclient --app-id=xdg-portal-filechooser -T $(quote_string "$TITLE")}"
+termcmd="${TERMCMD:-/usr/bin/alacritty --class xdg-portal-filechooser -T $(quote_string "$TITLE")}"
 
 cleanup() {
   if [ -f "$tmpfile" ]; then
@@ -97,7 +97,7 @@ else
   set -- --chooser-file="$(quote_string "$out")" "$(quote_string "$path")"
 fi
 
-eval "$termcmd -- $cmd $@"
+eval "$termcmd -e $cmd $@"
 
 # case save file
 if [ "$save" = "1" ] && [ -s "$tmpfile" ]; then
