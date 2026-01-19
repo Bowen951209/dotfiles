@@ -61,3 +61,5 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" }
 
 -- Lsp Rename
 vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, { desc = "Rename" })
+
+vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
