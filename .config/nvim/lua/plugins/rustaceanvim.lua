@@ -7,13 +7,19 @@ return {
 		{
 			"<leader>rn",
 			":RustLsp! runnables<CR>",
-			desc = "Rust runnables",
+			desc = "Run previous runnables",
+			ft = "rust",
+		},
+		{
+			"<leader>rt",
+			":RustLsp! testables<CR>",
+			desc = "Run previous testables",
 			ft = "rust",
 		},
 		{
 			"<leader>d",
 			":RustLsp! debuggables<CR>",
-			desc = "Rust debuggables",
+			desc = "Run previous debuggables",
 			ft = "rust",
 		},
 	},
