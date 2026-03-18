@@ -21,3 +21,5 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+source /usr/share/nvm/init-nvm.sh
