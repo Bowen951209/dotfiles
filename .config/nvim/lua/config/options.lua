@@ -11,6 +11,9 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 
+-- local project config
+vim.o.exrc = true
+
 -- Set PowerShell as shell on Windows
 if vim.fn.has("win32") == 1 then
 	vim.o.shell = "powershell.exe"
