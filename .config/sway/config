@@ -205,6 +205,9 @@ exec swayidle -w \
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # Toggle sticky
+    bindsym $mod+Shift+s sticky toggle
 #
 # Scratchpad:
 #
