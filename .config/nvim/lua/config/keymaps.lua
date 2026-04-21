@@ -54,18 +54,16 @@ end, { desc = "Toggle Inlay Hints" })
 
 -- Gotos
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<cr>", { desc = "Peek definition" })
 vim.keymap.set("n", "gr", function()
 	require("telescope.builtin").lsp_references()
-end, { desc = "Go to References with Telescope", nowait = true })
+end, { desc = "Go to References", nowait = true })
 
-vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", { desc = "Hover" })
-vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", { desc = "Code Action" })
-
--- Neogit
-vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
-
--- Lsp Rename
+-- Lsp
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, { desc = "Rename" })
 
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
+-- Neogit
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
