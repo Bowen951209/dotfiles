@@ -25,3 +25,4 @@ function y() {
 }
 
 source /usr/share/nvm/init-nvm.sh
+source $HOME/export-esp.sh
