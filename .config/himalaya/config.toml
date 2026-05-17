@@ -1,0 +1,35 @@
+[accounts.disroot]
+default = true
+email = "bowen95@disroot.org"
+display-name = "bowen95"
+downloads-dir = "/home/bowen951209/Downloads"
+backend.type = "maildir"
+backend.root-dir = "/home/bowen951209/mail/disroot"
+backend.maildirpp = false
+message.send.backend.type = "smtp"
+message.send.backend.host = "disroot.org"
+message.send.backend.port = 465
+message.send.backend.login = "bowen95@disroot.org"
+message.send.backend.encryption.type = "tls"
+message.send.backend.auth.type = "password"
+message.send.backend.auth.command = "pass show disroot"
+
+[accounts.gmail]
+email = "bowen951209@gmail.com"
+folder.aliases.inbox = "INBOX"
+folder.aliases.sent = "[Gmail]/寄件備份"
+folder.aliases.drafts = "[Gmail]/草稿"
+folder.aliases.trash = "[Gmail]/垃圾桶"
+backend.type = "imap"
+backend.host = "imap.gmail.com"
+backend.port = 993
+backend.login = "bowen951209@gmail.com"
+backend.auth.type = "password"
+backend.auth.cmd = "pass show gmail"
+message.send.backend.type = "smtp"
+message.send.backend.host = "smtp.gmail.com"
+message.send.backend.port = 465
+message.send.backend.login = "bowen951209@gmail.com"
+message.send.backend.auth.type = "password"
+message.send.backend.auth.cmd = "pass show gmail"
+message.send.pre-hook = "python /home/bowen951209/.config/himalaya/pre-hook.py"
