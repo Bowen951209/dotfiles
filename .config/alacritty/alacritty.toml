@@ -1,0 +1,28 @@
+# Helmholtz theme. Based on <https://gist.github.com/przemoc/1d8e27c08b9e9fefda7d14baca36ef01>
+[colors.primary]
+background = "#000000"
+foreground = "#BFBFBF"
+
+[colors.cursor]
+text = "#000000"
+cursor = "#BFBFBF"
+
+[colors.normal]
+black   = "#000000"
+red     = "#D42C3A"
+green   = "#1CA800"
+yellow  = "#C0A000"
+blue    = "#005DFF"
+magenta = "#B148C6"
+cyan    = "#00A89A"
+white   = "#BFBFBF"
+
+[colors.bright]
+black   = "#606060"
+red     = "#FF7676"
+green   = "#00F200"
+yellow  = "#F2F200"
+blue    = "#7D97FF"
+magenta = "#FF70FF"
+cyan    = "#00F0F0"
+white   = "#FFFFFF"
