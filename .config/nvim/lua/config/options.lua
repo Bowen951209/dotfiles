@@ -11,6 +11,12 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 
+-- Color
+-- Would look a lot different if not disabling `termguicolors`.
+vim.opt.termguicolors = false
+-- vim.cmd.colorscheme("default")
+-- vim.opt.background = "dark"
+
 -- local project config
 vim.o.exrc = true
 
