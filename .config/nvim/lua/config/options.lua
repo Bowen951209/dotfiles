@@ -11,6 +11,8 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- local project config
 vim.o.exrc = true
