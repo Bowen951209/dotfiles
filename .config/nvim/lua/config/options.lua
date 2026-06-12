@@ -11,8 +11,6 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 
--- Color
-vim.cmd.colorscheme("torte")
 
 -- local project config
 vim.o.exrc = true
