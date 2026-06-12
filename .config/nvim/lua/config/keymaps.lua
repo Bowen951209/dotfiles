@@ -44,7 +44,6 @@ local function close_terminal()
 		vim.cmd("bd!") -- delete buffer
 	end
 end
-vim.keymap.set("t", "<C-c><C-c>", close_terminal, { noremap = true, silent = true, desc = "Close terminal" })
 vim.keymap.set("n", "<C-c><C-c>", close_terminal, { noremap = true, silent = true, desc = "Close terminal" })
 
 -- Inlay Hint toggle
