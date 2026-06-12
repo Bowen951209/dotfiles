@@ -5,10 +5,17 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
-				layout_config = {
-					prompt_position = "top",
-				},
+				layout_strategy = "vertical",
 				sorting_strategy = "ascending",
+				layout_config = {
+					-- do not set to 1.0, it would be parsed as char width
+					width = 0.9,
+					height = 0.9,
+					-- Do not cutoff the preview view.
+					-- (The preview view is always cutoff
+					-- with my font size.)
+					preview_cutoff = 0,
+				},
 			},
 			pickers = {
 				find_files = {
