@@ -2,28 +2,11 @@
 return {
 	{ "j-hui/fidget.nvim", opts = {} },
 	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	},
-	{
 		"kylechui/nvim-surround",
 		version = "^3.0.0",
 		event = "VeryLazy",
 		config = function()
 			require("nvim-surround").setup()
-		end,
-	},
-	{
-		"lervag/vimtex",
-		lazy = false,
-		init = function()
-			vim.g.vimtex_view_method = "zathura"
-			vim.g.vimtex_compiler_method = "latexmk"
 		end,
 	},
 	{

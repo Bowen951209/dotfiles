@@ -90,14 +90,4 @@ return {
 			})
 		end,
 	},
-	{
-		"ruifm/gitlinker.nvim",
-		opts = {
-			remote = "upstream", -- force the use of a specific remote
-		},
-		dependencies = "nvim-lua/plenary.nvim",
-		config = function()
-			require("gitlinker").setup()
-		end,
-	},
 }
