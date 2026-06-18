@@ -23,6 +23,7 @@ set $menu wofi --show drun -i
 exec GSK_RENDERER=gl swayosd-server
 
 exec autotiling
+exec udiskie
 
 # Sink volume raise optionally with --device
 bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
