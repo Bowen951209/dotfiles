@@ -83,8 +83,6 @@ for_window [app_id="xdg-portal-filechooser"] floating enable, move position cent
 exec swayidle \
   lock 'hyprlock && loginctl unlock-session'
 exec swayidle -w \
-  timeout 300 '[ -f /tmp/skip_lock ] || loginctl lock-session' \
-  timeout 600 '[ -f /tmp/skip_suspend ] || systemctl suspend' \
   before-sleep 'loginctl lock-session'
 
 ### Input configuration
