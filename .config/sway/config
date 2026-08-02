@@ -253,6 +253,11 @@ bindsym $mod+r mode "resize"
 
     # Power menu (wofi)
     bindsym $mod+Escape exec ~/.config/waybar/scripts/power.sh
+
+    # toggle external and internal screen
+    # SAFETY: toggle screen is non-sensitive
+    bindsym --locked  $mod+p exec ~/.local/bin/toggle_screen.sh
+
 #
 # Status Bar:
 #
