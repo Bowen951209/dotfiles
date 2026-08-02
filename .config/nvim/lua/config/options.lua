@@ -14,6 +14,8 @@ vim.opt.showmode = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.textwidth = 70
+
 -- local project config
 vim.o.exrc = true
 
