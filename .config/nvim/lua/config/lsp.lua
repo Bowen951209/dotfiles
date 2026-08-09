@@ -1,5 +1,11 @@
-vim.lsp.enable("tsserver")
+vim.lsp.enable("gopls")
+vim.lsp.config("gopls", {
+	cmd = { "gopls" },
+	filetypes = { "go" },
+	root_markers = { "go.work", "go.mod", ".git" },
+})
 
+vim.lsp.enable("tsserver")
 vim.lsp.config("tsserver", {
 	cmd = { "typescript-language-server", "--stdio" },
 	filetypes = { "typescript" },
