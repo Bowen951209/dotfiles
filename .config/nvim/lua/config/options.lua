@@ -1,5 +1,19 @@
--- General editor options and leader key
 vim.g.mapleader = " "
+
+-- OSC52 clipboard
+vim.g.clipboard = {
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+	},
+}
+
+vim.opt.clipboard = "unnamedplus"
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
